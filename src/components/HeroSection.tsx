@@ -1,8 +1,9 @@
 "use client";
 
-import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import { Box, Container, Typography, Button } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { colors } from "../theme/theme";
+import Stack from "@mui/material/Stack";
 
 const noteTags = [
   { label: "Top", note: "Bergamot" },
@@ -84,7 +85,11 @@ export default function HeroSection() {
             </Stack>
 
             {/* Signature note strip */}
-            <Stack direction="row" spacing={{ xs: 2, sm: 4 }} flexWrap="wrap">
+            <Stack
+              direction="row"
+              spacing={{ xs: 2, sm: 3 }}
+              sx={{ flexWrap: "wrap" }}
+            >
               {noteTags.map((n) => (
                 <Box key={n.label}>
                   <Typography

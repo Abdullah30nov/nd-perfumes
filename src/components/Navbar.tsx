@@ -108,8 +108,14 @@ export default function Navbar({ cartCount = 0 }: { cartCount?: number }) {
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
-        PaperProps={{
-          sx: { bgcolor: colors.bottleGreen, width: "78vw", maxWidth: 320 },
+        slotProps={{
+          paper: {
+            sx: {
+              bgcolor: colors.bottleGreen,
+              width: "78vw",
+              maxWidth: 320,
+            },
+          },
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "flex-end", p: 2 }}>
@@ -127,10 +133,14 @@ export default function Navbar({ cartCount = 0 }: { cartCount?: number }) {
               sx={{ py: 1.5 }}
             >
               <ListItemText
-                primaryTypographyProps={{
-                  fontFamily: "var(--font-display), serif",
-                  fontSize: "1.3rem",
-                  color: colors.ivory,
+                slotProps={{
+                  primary: {
+                    sx: {
+                      fontFamily: "...",
+                      fontSize: "...",
+                      color: "...",
+                    },
+                  },
                 }}
                 primary={link.label}
               />

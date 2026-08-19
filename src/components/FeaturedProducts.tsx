@@ -1,10 +1,11 @@
 "use client";
 
-import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import { Box, Container, Typography, Button } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 import { colors } from "../theme/theme";
+import Stack from "@mui/material/Stack";
 
 export default function FeaturedProducts() {
   const featured = products.filter((p) => p.bestseller);
@@ -12,12 +13,24 @@ export default function FeaturedProducts() {
   return (
     <Box component="section" sx={{ py: { xs: 7, md: 10 }, bgcolor: colors.bottleGreen }}>
       <Container maxWidth="lg">
-        <Stack
+        {/* <Stack
           direction={{ xs: "column", sm: "row" }}
           justifyContent="space-between"
           alignItems={{ xs: "flex-start", sm: "flex-end" }}
           spacing={2}
           sx={{ mb: { xs: 4, md: 5 } }}
+        > */}
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          sx={{
+            mb: { xs: 4, md: 5 },
+            justifyContent: "space-between",
+            alignItems: {
+              xs: "flex-start",
+              sm: "flex-end",
+            },
+          }}
         >
           <Box>
             <Typography variant="overline" sx={{ color: colors.gold, display: "block", mb: 1 }}>
